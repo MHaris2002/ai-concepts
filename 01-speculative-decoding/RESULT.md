@@ -39,7 +39,7 @@ network performance:
 | 30% | 0.97x |
 | 10% | 0.80x |
 
-The relationship isn't linear — speedup falls off sharply as accuracy
+The relationship isn't linear speedup falls off sharply as accuracy
 drops, and it crosses the 1.0x break-even point right around 30% draft
 accuracy. Below that, speculative decoding is measurably *slower* than
 just running the big model normally.
@@ -59,20 +59,20 @@ a bad draft model, not just a missed opportunity.
 ## Limitations
 
 - This is a simulation, not a test with real neural networks. Real draft
-  models don't have a single, constant accuracy — they tend to do better
+  models don't have a single, constant accuracy they tend to do better
   on predictable, common continuations and worse on unusual ones, so
   real-world speedup would vary within a single generation rather than
   stay fixed like it does here.
 - The 5ms/50ms cost ratio and the break-even point are specific to the
   parameters chosen in this run. Changing the draft model's relative cost
-  or the lookahead length would shift where the break-even point sits —
+  or the lookahead length would shift where the break-even point sits
   worth testing as a follow-up rather than assuming this threshold is
   universal.
 
 ## Takeaway
 
 Speculative decoding's speedup isn't guaranteed just by adding a draft
-model — it depends on the draft model actually being good enough at
+model it depends on the draft model actually being good enough at
 predicting what the big model would say. Below some threshold, it can
 make generation slower, not faster. That's a meaningfully different claim
 than "speculative decoding speeds things up," and it's the kind of detail
