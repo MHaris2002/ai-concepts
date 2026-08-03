@@ -1,4 +1,4 @@
-# Result: Speculative Decoding — Is It Actually a Free Speedup?
+# Result: Speculative Decoding - Is It Actually a Free Speedup?
 
 ## The claim being tested
 
